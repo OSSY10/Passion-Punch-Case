@@ -1498,6 +1498,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1922022794}
     - target: {fileID: 6114000854437180301, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: redBullet
+      value: 
+      objectReference: {fileID: 6863857337172796870, guid: f3e340a738592da458ece12f2ba78c5d, type: 3}
+    - target: {fileID: 6114000854437180301, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: aimVirtualCamera
       value: 
       objectReference: {fileID: 1701471438}
