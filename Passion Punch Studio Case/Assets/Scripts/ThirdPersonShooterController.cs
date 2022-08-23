@@ -23,6 +23,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform normalBullet;
     [SerializeField] private Transform redBullet;
 
+
     private Transform bulletPrefab;
     public int numberOfBullets;
     private int totalNumberOfBullets = 0;
@@ -81,7 +82,6 @@ public class ThirdPersonShooterController : MonoBehaviour
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
             if (starterAssetsInputs.shoot)
             {
-
                 numberOfBullets = Random.Range(minNumberOfBullets, maxNumberOfBullets);
                 totalNumberOfBullets += numberOfBullets;
                 for (int i = 0; i < numberOfBullets; i++)
