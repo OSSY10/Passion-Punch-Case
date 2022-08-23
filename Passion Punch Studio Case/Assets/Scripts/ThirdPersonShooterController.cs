@@ -21,6 +21,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform explodingBullet;
     [SerializeField] private Transform biggerBullet;
     [SerializeField] private Transform normalBullet;
+    [SerializeField] private Transform redBullet;
 
     private Transform bulletPrefab;
     public int numberOfBullets;
@@ -53,6 +54,10 @@ public class ThirdPersonShooterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             bulletPrefab = explodingBullet;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            bulletPrefab = redBullet;
         }
         totalNumberOfBulletstText.text = totalNumberOfBullets.ToString();
         Vector3 mouseWorldPosition = Vector3.zero;
