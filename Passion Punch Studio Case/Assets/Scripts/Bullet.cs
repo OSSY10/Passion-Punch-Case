@@ -21,7 +21,21 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //bulletRigidbody.isKinematic = true;
+        if (this.gameObject.CompareTag("Exploding Bullet"))
+        {
+            bulletRigidbody.isKinematic = true;
+            StartCoroutine(WaitForExplode());
+        }
+        else
+        {
+            Instantiate(vfxHit, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+       
+    IEnumerator WaitForExplode()
+    {
+        yield return new WaitForSeconds(1f);
         Instantiate(vfxHit, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

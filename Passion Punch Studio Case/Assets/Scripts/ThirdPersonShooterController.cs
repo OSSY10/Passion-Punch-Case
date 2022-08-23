@@ -12,14 +12,17 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private float normalSensitivity;
     [SerializeField] private float aimSensitivity;
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
-    [SerializeField] private Transform bulletPrefab;
     [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private float deviationRate;
     [SerializeField] private int minNumberOfBullets;
     [SerializeField] private int maxNumberOfBullets;
     [SerializeField] private GameObject crosshair;
-    [SerializeField] TextMeshPro totalNumberOfBulletstText;
-    
+    [SerializeField] private TextMeshPro totalNumberOfBulletstText;
+    [SerializeField] private Transform explodingBullet;
+    [SerializeField] private Transform biggerBullet;
+    [SerializeField] private Transform normalBullet;
+
+    private Transform bulletPrefab;
     public int numberOfBullets;
     private int totalNumberOfBullets = 0;
     private Animator animator;
@@ -31,10 +34,26 @@ public class ThirdPersonShooterController : MonoBehaviour
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
     }
+    private void Start()
+    {
+        bulletPrefab = normalBullet;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            bulletPrefab = normalBullet;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            bulletPrefab = biggerBullet;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            bulletPrefab = explodingBullet;
+        }
         totalNumberOfBulletstText.text = totalNumberOfBullets.ToString();
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);

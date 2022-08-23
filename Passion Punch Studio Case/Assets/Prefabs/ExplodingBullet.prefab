@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6863857337172796871}
   - component: {fileID: -1832522228868175538}
   m_Layer: 3
-  m_Name: pfBulletProjectile
-  m_TagString: Untagged
+  m_Name: ExplodingBullet
+  m_TagString: Exploding Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

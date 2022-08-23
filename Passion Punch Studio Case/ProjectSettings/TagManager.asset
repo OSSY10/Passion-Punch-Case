@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - Exploding Bullet
   layers:
   - Default
   - TransparentFX
